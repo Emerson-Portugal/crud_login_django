@@ -1,13 +1,10 @@
-
-from django.contrib import admin
+# core/urls.py
 from django.urls import path, include
-from .views import (
-    HomePageView
-)
+from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HomePageView.as_view(), name='home'),
-    path('login/', include('apps.login.urls', namespace='login')),
-
+    path('', include('apps.login.urls', namespace='login')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    
 ]

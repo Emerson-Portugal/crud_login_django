@@ -1,9 +1,10 @@
-from django.urls import path, include
+#app.login/urls.py
+from django.urls import path
 from . import views
 
 app_name = "login"
 
 urlpatterns = [
     path('', views.home, name='home'), 
-    path('', views.exit, name='exit' ),
+    path('logout/', views.exit, name='exit' ),
 ]
